@@ -2,11 +2,11 @@
 $con = mysqli_connect('127.0.0.1', 'nazarsemkiv', 'nazaRENKO11');
 
 if(!$con){
-    echo 'Not Connected To Server';
+    echo 'Не з"єднано з сервером';
 }
 
 if(!mysqli_select_db($con, 'nazarsemkiv')){
-    echo 'Database Not Selected';
+    echo 'База даних не вибрана';
 }
 
 $Email = $_POST['email'];
@@ -14,10 +14,10 @@ $Email = $_POST['email'];
 $sql = "INSERT INTO users (Email) VALUES ('$Email')";
 
 if(!mysqli_query($con,$sql)){
-    echo 'Not inserted';
+    echo 'Не додано в базу даних для отримання оновлень';
 }
 else{
-    echo 'Inserted';
+    echo 'Додано в базу даних для отримання оновлень';
 }
 
 header("refresh:2; url=index.html");
